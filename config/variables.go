@@ -1,25 +1,8 @@
 package config
 
-// Cloud Run
-var (
-	runServices = []string{
-		"service-a",
-		"service-b",
-		"service-c",
-	}
-	region = "asia-northeast1"
-)
-
 type project struct {
 	name string
 	key  string
-}
-
-// GCP project
-var projects = []project{
-	{name: "stg", key: "stg"},
-	{name: "dev", key: "dev"},
-	{name: "prod", key: "prod"},
 }
 
 type service struct {
@@ -27,14 +10,35 @@ type service struct {
 	url  string
 }
 
-// NOTE: Implementation of the function converts gaeServices to String does not exist for now.
-// projectName and serviceName is needed
-var gae = []service{
-	{
-		name: "App Engine (Service)",
-		url:  "https://console.cloud.google.com/appengine/versions?project=%s&serviceId={service}",
-	},
-}
+var (
+	// Cloud Run
+	// replace to your cloud run services
+	runServices = []string{
+		"service-a",
+		"service-b",
+		"service-c",
+	}
+
+	// replace to your region
+	region = "asia-northeast1"
+
+	// GCP project
+	// replace to your gcp projects
+	projects = []project{
+		{name: "stg", key: "stg"},
+		{name: "dev", key: "dev"},
+		{name: "prod", key: "prod"},
+	}
+
+	// NOTE: Implementation of the function converts gaeServices to String does not exist for now.
+	// projectName and serviceName is needed
+	gae = []service{
+		{
+			name: "App Engine (Service)",
+			url:  "https://console.cloud.google.com/appengine/versions?project=%s&serviceId={service}",
+		},
+	}
+)
 
 // GCP services(needs only a project name)
 var services = []service{
