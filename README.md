@@ -4,8 +4,8 @@ GCP URL generator for [fzf-bookmark-opener](https://github.com/kyu08/fzf-bookmar
 # how to use
 1. install [fzf-bookmark-opener](https://github.com/kyu08/fzf-bookmark-opener)
 1. edit `config/variables.go` as you like(enter following items)
-  - GCP Project Names
-  - Cloud Run Service Names
+    - GCP Project Names
+    - Cloud Run Service Names
 1. execute `make generate`
 1. append generated bookmarks to your `~/.config/fzf-bookmark-opener/config.yaml`
 
